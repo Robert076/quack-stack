@@ -1,6 +1,14 @@
 # quack-stack
 An **overkill** stack for managing read operations on *ducks*. If you ever needed an API that returns ducks, **this is it**.
 
+---
+
+### Overview
+
+---
+
+### Project structure
+
 ```bash
 .
 ├── 🐳 Dockerfile                          # Defines the Docker image for the application.
