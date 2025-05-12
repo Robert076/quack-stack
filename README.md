@@ -35,7 +35,7 @@ kubectl apply -f kubernetes/
 kubectl port-forward service/api-service 8080:8080
 ```
 
-5. Visit [http://localhost:8080/ducks](localhost:8080/ducks)
+5. Visit [localhost:8080/ducks](http://localhost:8080/ducks)
 
 ---
 
