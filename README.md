@@ -1,13 +1,45 @@
 # quack-stack
 An **overkill** stack for managing read operations on *ducks*. If you ever needed an API that returns ducks, **this is it**.
 
+### 🌐 Overview
+
+Simple GET endpoint deployed to Kubernetes. Coded in Go.
+
 ---
 
-### Overview
+### 🚀 Run the project:
+
+Prerequisites: this tutorial assumes that you run on macOS and have minikube as your local Kubernetes cluster.
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/Robert076/quack-stack
+```
+
+2. Start your local minikube cluster
+
+```bash
+minikube start
+```
+
+3. Apply the Kubernetes files
+
+```bash
+kubectl apply -f kubernetes/
+```
+
+4. Port forward inside the Minikube VM
+
+```bash
+kubectl port-forward service/api-service 8080:8080
+```
+
+5. Visit [http://localhost:8080/ducks](localhost:8080/ducks)
 
 ---
 
-### Project structure
+### ⚙️ Project structure
 
 ```bash
 .
