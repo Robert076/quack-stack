@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: quack-stack-api
+  template:
+    metadata:
+      labels:
+        app: quack-stack-api
+    spec:
+      containers:
+        - name: quack-stack-container
+          image: robert076/quack-stack:quack
+          ports:
+            - containerPort: 8080
+          env:
+            - name: "DB_USER"
+              valueFrom:
+                configMapKeyRef:
+                  name: quack-config
+                  key: DB_USER
+            - name: "DB_PASS"
+              valueFrom:
+                configMapKeyRef:
+                  name: quack-config
+                  key: DB_PASS
+            - name: "DB_NAME"
+              valueFrom:
+                configMapKeyRef:
+                  name: quack-config
+                  key: DB_NAME
+            - name: "PORT"
+              valueFrom:
+                configMapKeyRef:
+                  name: quack-config
+                  key: PORT
+            - name: "HOST"
+              valueFrom:
+                configMapKeyRef:
+                  name: quack-config
+                  key: HOST

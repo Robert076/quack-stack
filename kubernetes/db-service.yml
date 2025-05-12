@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: database
+spec:
+  selector:
+    app: quack-stack-db
+  ports:
+    - protocol: TCP
+      targetPort: 5432
+      port: 5432
